@@ -37,7 +37,7 @@ public class Enclosure<T> where T : Animal
         Console.WriteLine();
         foreach (T animal in animalsInEnclosure)
         {
-            Console.WriteLine($"Performing checkup on {animal.GetName} the {animal.GetSpecies()}");
+            Console.WriteLine($"Performing checkup on {animal.GetName()} the {animal.GetSpecies()}");
         }
     }
 
