@@ -21,9 +21,9 @@ public class Enclosure<T> where T : Animal
         Console.WriteLine();
         foreach (T animal in animalsInEnclosure)
         {
-            Console.WriteLine(animal.GetName());
-            Console.WriteLine(animal.GetSpecies());
-            Console.WriteLine(animal.GetAge());
+            Console.WriteLine($"Name: {animal.GetName()}");
+            Console.WriteLine($"Species: {animal.GetSpecies()}");
+            Console.WriteLine($"Age: {animal.GetAge()}");
         }
     }
 
