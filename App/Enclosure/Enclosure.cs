@@ -40,4 +40,9 @@ public class Enclosure<T> where T : Animal
             Console.WriteLine($"Performing checkup on {animal.GetName} the {animal.GetSpecies()}");
         }
     }
+
+    public List<T> GetAnimals()
+    {
+        return animalsInEnclosure;
+    }
 }
