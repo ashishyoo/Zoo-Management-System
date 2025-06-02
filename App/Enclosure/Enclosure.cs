@@ -24,11 +24,16 @@ public class Enclosure<T> where T : Animal
             Console.WriteLine($"Name: {animal.GetName()}");
             Console.WriteLine($"Species: {animal.GetSpecies()}");
             Console.WriteLine($"Age: {animal.GetAge()}");
+            animal.MakeSound();
+            animal.Eat(animal.GetFood());
+            animal.Move();
+            Console.WriteLine();
         }
     }
 
     public string GetAnimalCount()
     {
+        Console.WriteLine();
         return $"Total animals in enclosure: {animalsInEnclosure.Count}";
     }
 
@@ -43,6 +48,7 @@ public class Enclosure<T> where T : Animal
 
     public List<T> GetAnimals()
     {
+        Console.WriteLine();
         return animalsInEnclosure;
     }
 }
