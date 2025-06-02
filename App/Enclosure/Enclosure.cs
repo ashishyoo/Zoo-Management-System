@@ -8,22 +8,10 @@ public class Enclosure<T> where T : Animal
 
     public void AddAnimal(T animal)
     {
-        animalsInEnclosure.Add(animal);
-    }
-
-    public void RemoveAnimal(T animal)
-    {
-        animalsInEnclosure.Remove(animal);
-    }
-
-    public void DisplayAnimalsDetails()
-    {
         Console.WriteLine();
-        foreach (T animal in animalsInEnclosure)
+        if (animal.GetSpecies().ToLower() == "lion")
         {
-            if (animal.GetSpecies().ToLower() == "lion")
-            {
-                Console.WriteLine(@"
+            Console.WriteLine(@"
                              ,%%%%%%%%,
                            ,%%/\%%%%/\%%
                           ,%%%\c "" J/%%%
@@ -38,10 +26,10 @@ public class Enclosure<T> where T : Animal
                      \         /_ | |__
                      (___________)))))))
                 ");
-            }
-            else if (animal.GetSpecies().ToLower() == "zebra")
-            {
-                Console.WriteLine(@"
+        }
+        else if (animal.GetSpecies().ToLower() == "zebra")
+        {
+            Console.WriteLine(@"
                     \\/),
                    ,'.' /,
                   (_)- / /,
@@ -52,10 +40,10 @@ public class Enclosure<T> where T : Animal
                       )_)_/ )_/ )_)
                      (_(_.'(_.'(_.'
                 ");
-            }
-            else if (animal.GetSpecies().ToLower() == "eagle")
-            {
-                Console.WriteLine(@"
+        }
+        else if (animal.GetSpecies().ToLower() == "eagle")
+        {
+            Console.WriteLine(@"
                         .~~~~-.
                        /    ,__`)
                       |      \o/|'-.
@@ -65,10 +53,10 @@ public class Enclosure<T> where T : Animal
                      /  ,  ,  ,  \
                      `--'--'--'--'                
                 ");
-            }
-            else if (animal.GetSpecies().ToLower() == "anaconda")
-            {
-                Console.WriteLine(@"
+        }
+        else if (animal.GetSpecies().ToLower() == "anaconda")
+        {
+            Console.WriteLine(@"
                                     __    
                        /  \  /  \  /  \  /  \
                  _____/  __\/  __\/  __\/  __\__________
@@ -77,7 +65,26 @@ public class Enclosure<T> where T : Animal
                      |/   \_/   \_/   \_/   \    o \
                                              \_____/--<
                     ");
-            }
+        }
+        animalsInEnclosure.Add(animal);
+        Console.WriteLine($"[{animal.GetName()} added to the enclosure]");
+    }
+
+    public void RemoveAnimal(T animal)
+    {
+        Console.WriteLine();
+        animalsInEnclosure.Remove(animal);
+        Console.WriteLine($"[{animal.GetName()} removed from the enclosure]");
+    }
+
+    public void DisplayAnimalsDetails()
+    {
+        Console.WriteLine();
+        Console.WriteLine("[Displaying Animal Details]");
+        Console.WriteLine();
+
+        foreach (T animal in animalsInEnclosure)
+        {
             Console.WriteLine($"Name: {animal.GetName()}");
             Console.WriteLine($"Species: {animal.GetSpecies()}");
             Console.WriteLine($"Age: {animal.GetAge()}");
@@ -91,7 +98,7 @@ public class Enclosure<T> where T : Animal
     public string GetAnimalCount()
     {
         Console.WriteLine();
-        return $"Total animals in enclosure: {animalsInEnclosure.Count}";
+        return $"[Total animals in enclosure: {animalsInEnclosure.Count}]";
     }
 
     public void PerformRoutineCheckup()
@@ -99,7 +106,7 @@ public class Enclosure<T> where T : Animal
         Console.WriteLine();
         foreach (T animal in animalsInEnclosure)
         {
-            Console.WriteLine($"Performing checkup on {animal.GetName()} the {animal.GetSpecies()}");
+            Console.WriteLine($"[Performing checkup on {animal.GetName()} the {animal.GetSpecies()}]");
         }
     }
 
