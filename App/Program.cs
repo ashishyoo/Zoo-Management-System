@@ -23,6 +23,9 @@ class Program
         lionLand.PerformRoutineCheckup();
         Console.WriteLine(lionLand.GetAnimalCount());
 
+        lionLand.RemoveAnimal(lion3);
+        Console.WriteLine(lionLand.GetAnimalCount());
+
         ZooKeeper admin1 = new ZooKeeper();
         admin1.FeedAnimalInEnclosure(lionLand, "mutton");
         admin1.TriggerSoundsInEnclosure(lionLand);
