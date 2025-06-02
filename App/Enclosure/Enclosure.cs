@@ -29,7 +29,7 @@ public class Enclosure<T> where T : Animal
 
     public string GetAnimalCount()
     {
-        return $"Total animals in enclosure: {animalsInEnclosure.Count()}";
+        return $"Total animals in enclosure: {animalsInEnclosure.Count}";
     }
 
     public void PerformRoutineCheckup()
