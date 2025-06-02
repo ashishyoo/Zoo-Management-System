@@ -21,9 +21,12 @@ class Program
         lionLand.AddAnimal(lion3);
         lionLand.DisplayAnimalsDetails();
         lionLand.PerformRoutineCheckup();
+        Console.WriteLine(lionLand.GetAnimalCount());
 
         ZooKeeper admin1 = new ZooKeeper();
-        admin1.FeedAnimalInEnclosure(lionLand, "meat");
+        admin1.FeedAnimalInEnclosure(lionLand, "mutton");
+        admin1.TriggerSoundsInEnclosure(lionLand);
+        admin1.ObserveMotionsInEnclosure(lionLand);
 
         Lion lion = new Lion("Leo", "Lion", 30);
         Zebra zebra = new Zebra("Zerren", "Zebra", 32);
@@ -38,9 +41,12 @@ class Program
         mixedHabitat.AddAnimal(anaconda);
 
         mixedHabitat.DisplayAnimalsDetails();
+        mixedHabitat.PerformRoutineCheckup();
         Console.WriteLine(mixedHabitat.GetAnimalCount());
 
         ZooKeeper admin2 = new ZooKeeper();
+        admin2.FeedAnimalInEnclosure(mixedHabitat, "water");
+        admin2.TriggerSoundsInEnclosure(mixedHabitat);
         admin2.ObserveMotionsInEnclosure(mixedHabitat);
     }
 }
