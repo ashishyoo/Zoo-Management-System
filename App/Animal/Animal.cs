@@ -6,11 +6,14 @@ public abstract class Animal
     private string species;
     private int age;
 
-    protected Animal(string name, string species, int age)
+    private string defaultFood;
+
+    protected Animal(string name, string species, int age, string defaultFood)
     {
         this.name = name;
         this.species = species;
         this.age = age;
+        this.defaultFood = defaultFood;
     }
 
     public string GetName()
@@ -26,6 +29,11 @@ public abstract class Animal
     public int GetAge()
     {
         return age;
+    }
+
+    public string GetFood()
+    {
+        return defaultFood;
     }
 
     public abstract void MakeSound();
