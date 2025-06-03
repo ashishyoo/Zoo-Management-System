@@ -55,9 +55,3 @@ Any derived class (`Lion`, `Zebra`, etc.) can substitute the base `Animal` class
 High-level modules like `ZooKeeper` and `Enclosure` depend on abstractions (the `Animal` class) rather than concrete implementations. The use of generics in `Enclosure<T>` further abstracts the dependency.
 
 **Example**: `ZooKeeper.cs` interacts with `Enclosure<T>` and `Animal` abstractions, not specific animal types, ensuring flexibility.
-
-## How to Run
-
-1. Ensure all provided files (`Program.cs`, `Animal.cs`, `Lion.cs`, `Zebra.cs`, `Eagle.cs`, `Anaconda.cs`, `ZooKeeper.cs`, `Enclosure.cs`) are in the same project directory.
-2. Compile and run `Program.cs` using a C# compiler (e.g., .NET SDK).
-3. The program will simulate zoo operations, displaying animal details, checkups, and zookeeper tasks.
